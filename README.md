@@ -18,17 +18,17 @@ library(IlluminaHumanMethylation450kanno.ilmn12.hg19)
 You need 2 character vectors:
 1) your list of top CpGs:
 ```r
-mylist<-read.csv("////ads.bris.ac.uk/filestore/MyFiles/Staff17/gs8094/Documents/work/ieu/present/afast/afast_dmrs/Mod1_DMRs_sig.csv", stringsAsFactors==FALSE)
+mylist<-read.csv("\\\\ads.bris.ac.uk\\filestore\\MyFiles\\Staff17\\gs8094\\Documents\\work\\ieu\\present\\afast\\afast_dmrs\\Mod1_DMRs_sig.csv",stringsAsFactors=FALSE)
 mylist <- mylist$CPG.Label
 ```
 2) a list of all CpGs on the array:
 ```r
-load("////ads.bris.ac.uk/filestore/MyFiles/Staff17/gs8094/Documents/work/ieu/data/useful_info_for_ewas/fdata_new.RData")
+load("\\\\ads.bris.ac.uk\\filestore\\MyFiles\\Staff17\\gs8094\\Documents\\work\\ieu\\data\\useful_info_for_ewas\\fdata_new.RData")
 allcpgs <- fdata.new$TargetID
 ```
 ## Look for gene ontology (GO) term enrichment
 ```r
-go.res <- gometh(sig.cpg=mylist, all.cpg=allcpgs, collection="GO")
+allc
 topGO(go.res)
 ```
 ## Look for KEGG pathway enrichment
@@ -36,3 +36,5 @@ topGO(go.res)
 kegg.res <- gometh(sig.cpg=mylist, all.cpg=allcpgs, collection="KEGG")
 topGO(kegg.res)
 ```
+## Find which genes belong to the enriched pathways/GO terms
+
