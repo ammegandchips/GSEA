@@ -28,13 +28,12 @@ allcpgs <- fdata.new$TargetID
 ```
 ## Look for gene ontology (GO) term enrichment
 ```r
-allc
+go.res <- gometh(sig.cpg=mylist, all.cpg=allcpgs, collection="GO")
 topGO(go.res)
 ```
 ## Look for KEGG pathway enrichment
 ```r
 kegg.res <- gometh(sig.cpg=mylist, all.cpg=allcpgs, collection="KEGG")
-topGO(kegg.res)
+topKEGG(kegg.res)
 ```
-## Find which genes belong to the enriched pathways/GO terms
 
